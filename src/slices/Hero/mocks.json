@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"prenom": {
+				"__TYPE__": "FieldContent",
+				"value": "dot",
+				"type": "Text"
+			},
+			"nom": {
+				"__TYPE__": "FieldContent",
+				"value": "paid",
+				"type": "Text"
+			},
+			"accroche": {
+				"__TYPE__": "FieldContent",
+				"value": "bear",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
