@@ -6,6 +6,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import Shapes from "./Shapes";
+import Header from "@/components/Header";
 /**
  * Props for `Hero`.
  */
@@ -72,7 +73,8 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       ref={component} className="px-4 py-10 md:px-6 md:py-14 lg:py-16 mx-auto w-full max-w-7xl"
     >
-      <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
+      <Header />
+      <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center mt-16">
         <Shapes />
         <div className="col-start-1 md:row-start-1">
           <h1 className="mb-8 text-[clamp(3rem,20vmin,20rem)] font-extrabold leading-none tracking-tighter"

@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { Suspense, useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
-import { useGLTF } from "@react-three/drei"; // Importation de useGLTF pour charger le modèle
+import { useGLTF } from "@react-three/drei"; 
 
 // Composant principal pour afficher le modèle
 export default function Shapes() {
