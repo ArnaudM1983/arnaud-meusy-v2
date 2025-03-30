@@ -1,0 +1,75 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "saw",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit ea mollit commodo commodo sit quis excepteur. Ipsum mollit velit qui in irure exercitation in elit enim."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "add",
+				"type": "Text"
+			},
+			"button_link": {
+				"key": "a0c53c01-e36f-4365-ac65-a3e0805b759b",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "division"
+				}
+			},
+			"avatar": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+					"width": 5243,
+					"height": 3495
+				},
+				"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+				"width": 5243,
+				"height": 3495,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "curious",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"curiculum": {
+				"__TYPE__": "LinkContent",
+				"key": "553a7c45-0b5a-4eb0-b01a-697c45994533",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "memory"
+				}
+			}
+		},
+		"items": []
+	}
+]

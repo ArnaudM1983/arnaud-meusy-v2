@@ -23,5 +23,9 @@ export default {
                 mono: ['var(--font-dm-mono)'],
             },
         }
-    }
+    },
+    plugins: [
+        require('@tailwindcss/typography'),
+        // autres plugins...
+      ],
 } satisfies Config;

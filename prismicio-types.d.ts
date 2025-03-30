@@ -4,7 +4,12 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | ProjetsSlice
+  | ContactSlice
+  | TechListSlice
+  | BiographySlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -72,6 +77,137 @@ export type HomepageDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument;
 
 /**
+ * Primary content in *Biography → Default → Primary*
+ */
+export interface BiographySliceDefaultPrimary {
+  /**
+   * Heading field in *Biography → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: biography.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Body field in *Biography → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: biography.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Button Text field in *Biography → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: biography.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Biography → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: biography.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Avatar field in *Biography → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: biography.default.primary.avatar
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  avatar: prismic.ImageField<never>;
+
+  /**
+   * Curiculum field in *Biography → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: CV
+   * - **API ID Path**: biography.default.primary.curiculum
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  curiculum: prismic.LinkToMediaField<prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for Biography Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BiographySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BiographySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Biography*
+ */
+type BiographySliceVariation = BiographySliceDefault;
+
+/**
+ * Biography Shared Slice
+ *
+ * - **API ID**: `biography`
+ * - **Description**: Biography
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BiographySlice = prismic.SharedSlice<
+  "biography",
+  BiographySliceVariation
+>;
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -133,6 +269,126 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Default variation for Projets Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjetsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Projets*
+ */
+type ProjetsSliceVariation = ProjetsSliceDefault;
+
+/**
+ * Projets Shared Slice
+ *
+ * - **API ID**: `projets`
+ * - **Description**: Projets
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjetsSlice = prismic.SharedSlice<
+  "projets",
+  ProjetsSliceVariation
+>;
+
+/**
+ * Item in *TechList → Default → Primary → Tech*
+ */
+export interface TechListSliceDefaultPrimaryTechItem {
+  /**
+   * Tech Name field in *TechList → Default → Primary → Tech*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_list.default.primary.tech[].tech_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tech_name: prismic.KeyTextField;
+
+  /**
+   * Tech Color field in *TechList → Default → Primary → Tech*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_list.default.primary.tech[].tech_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  tech_color: prismic.ColorField;
+
+  /**
+   * Icon field in *TechList → Default → Primary → Tech*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_list.default.primary.tech[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *TechList → Default → Primary*
+ */
+export interface TechListSliceDefaultPrimary {
+  /**
+   * Heading field in *TechList → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_list.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tech field in *TechList → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_list.default.primary.tech[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  tech: prismic.GroupField<Simplify<TechListSliceDefaultPrimaryTechItem>>;
+}
+
+/**
+ * Default variation for TechList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TechListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TechListSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TechList*
+ */
+type TechListSliceVariation = TechListSliceDefault;
+
+/**
+ * TechList Shared Slice
+ *
+ * - **API ID**: `tech_list`
+ * - **Description**: TechList
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TechListSlice = prismic.SharedSlice<
+  "tech_list",
+  TechListSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -158,10 +414,25 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BiographySlice,
+      BiographySliceDefaultPrimary,
+      BiographySliceVariation,
+      BiographySliceDefault,
+      ContactSlice,
+      ContactSliceVariation,
+      ContactSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      ProjetsSlice,
+      ProjetsSliceVariation,
+      ProjetsSliceDefault,
+      TechListSlice,
+      TechListSliceDefaultPrimaryTechItem,
+      TechListSliceDefaultPrimary,
+      TechListSliceVariation,
+      TechListSliceDefault,
     };
   }
 }

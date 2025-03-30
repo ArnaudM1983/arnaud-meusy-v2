@@ -68,10 +68,10 @@ const Hero: FC<HeroProps> = ({ slice }) => {
   }
 
   return (
-    <section
+    <section id="hero"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      ref={component} className="px-4 py-10 md:px-6 md:py-14 lg:py-16 mx-auto w-full max-w-7xl"
+      ref={component} className="px-4 py-10 md:px-6 md:py-14 lg:py-16 mx-auto w-full max-w-7xl min-h-screen"
     >
       <Header />
       <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center mt-16">

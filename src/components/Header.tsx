@@ -14,8 +14,8 @@ const Header: FC = () => {
         <nav>
           <ul className="flex gap-6">
             <li><a href="#" className="hover:text-yellow-300">Accueil</a></li>
-            <li><a href="#" className="hover:text-yellow-300">À propos</a></li>
-            <li><a href="#" className="hover:text-yellow-300">Projets</a></li>
+            <li><a href="#biography" className="hover:text-yellow-300">À propos</a></li>
+            <li><a href="#tech" className="hover:text-yellow-300">Projets</a></li>
             <li><a href="#" className="hover:text-yellow-300">Contact</a></li>
           </ul>
         </nav>
