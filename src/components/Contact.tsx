@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
         Contactez-moi
       </Heading>
       <div className="text-white text-2xl mb-10">
-        N'hésitez pas à me contacter pour en savoir plus
+        N&apos;hésitez pas à me contacter pour en savoir plus
       </div>
       <form ref={form} onSubmit={sendEmail} className="w-full space-y-6">
         {/* Champ Nom */}
