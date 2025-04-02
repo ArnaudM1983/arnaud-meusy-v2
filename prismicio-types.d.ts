@@ -270,6 +270,126 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Projets → Default → Primary → Card*
+ */
+export interface ProjetsSliceDefaultPrimaryCardItem {
+  /**
+   * Title field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Image field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Icone1 field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].icone1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone1: prismic.ImageField<never>;
+
+  /**
+   * Icone2 field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].icone2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone2: prismic.ImageField<never>;
+
+  /**
+   * Icone3 field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].icone3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone3: prismic.ImageField<never>;
+
+  /**
+   * Icone4 field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].icone4
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone4: prismic.ImageField<never>;
+
+  /**
+   * Icone5 field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].icone5
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone5: prismic.ImageField<never>;
+
+  /**
+   * Link field in *Projets → Default → Primary → Card*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *Projets → Default → Primary*
+ */
+export interface ProjetsSliceDefaultPrimary {
+  /**
+   * Heading field in *Projets → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Card field in *Projets → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projets.default.primary.card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  card: prismic.GroupField<Simplify<ProjetsSliceDefaultPrimaryCardItem>>;
+}
+
+/**
  * Default variation for Projets Slice
  *
  * - **API ID**: `default`
@@ -278,7 +398,7 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export type ProjetsSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ProjetsSliceDefaultPrimary>,
   never
 >;
 
@@ -426,6 +546,8 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       ProjetsSlice,
+      ProjetsSliceDefaultPrimaryCardItem,
+      ProjetsSliceDefaultPrimary,
       ProjetsSliceVariation,
       ProjetsSliceDefault,
       TechListSlice,

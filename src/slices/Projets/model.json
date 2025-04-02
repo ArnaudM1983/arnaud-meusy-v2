@@ -10,7 +10,99 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "card": {
+          "type": "Group",
+          "config": {
+            "label": "Card",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              },
+              "icone1": {
+                "type": "Image",
+                "config": {
+                  "label": "Icone1",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "icone2": {
+                "type": "Image",
+                "config": {
+                  "label": "Icone2",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "icone3": {
+                "type": "Image",
+                "config": {
+                  "label": "Icone3",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "icone4": {
+                "type": "Image",
+                "config": {
+                  "label": "Icone4",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "icone5": {
+                "type": "Image",
+                "config": {
+                  "label": "Icone5",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

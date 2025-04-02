@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import clsx from "clsx";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -20,10 +22,14 @@ export default function RootLayout({
   return (
     <html lang="fr" className="bg-slate-900 text-slate-100">
       <body
-        className={urbanist.variable}
+        className={clsx(urbanist.variable, "relative min-h-screen")}
       >
         {children}
-      </body>
+        <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
+        <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
+        <Footer />
+        
+      </body>  
     </html>
   );
 }

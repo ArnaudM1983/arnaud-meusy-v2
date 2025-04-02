@@ -6,6 +6,7 @@ export default {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
+        "./node_modules/aceternity-ui/**/*.{js,ts,jsx,tsx}"
     ],
     theme: {
         extend: {
