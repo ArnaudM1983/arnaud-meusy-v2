@@ -4,21 +4,21 @@ import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { Suspense, useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
-import { useGLTF } from "@react-three/drei"; 
+import { useGLTF } from "@react-three/drei";
 
 // Composant principal pour afficher le modèle
 export default function Shapes() {
   return (
     <div className="relative w-full h-full">
       <Canvas
-        className="z-0"
+        className="z-0 h-[80vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"
         shadows
         gl={{ antialias: false }}
         dpr={[1, 1.5]}
         camera={{ position: [0, 5, 11], fov: 50, near: 1, far: 40 }}
       >
         <Suspense fallback={null}>
-          <Laptop /> 
+          <Laptop />
           
           {/* Lumière directionnelle avec position modifiée */}
           <directionalLight
@@ -52,6 +52,33 @@ function Laptop() {
   const meshRef = useRef();
   const [visible, setVisible] = useState(false);
 
+  // État pour gérer l'échelle du modèle 3D
+  const [scale, setScale] = useState([1, 1, 1]);
+
+  // Modifier l'échelle du modèle en fonction de la taille de l'écran
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        // Si l'écran est petit, réduire la taille du modèle
+        setScale([0.5, 0.5, 0.5]);
+      } else {
+        // Sur les écrans plus grands, garder la taille originale
+        setScale([1, 1, 1]);
+      }
+    };
+
+    // Ajouter l'écouteur d'événement lors du montage
+    window.addEventListener("resize", handleResize);
+
+    // Appeler la fonction au démarrage pour ajuster l'échelle dès le premier rendu
+    handleResize();
+
+    // Nettoyer l'écouteur lors du démontage
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   // Animation d'apparition
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -78,7 +105,7 @@ function Laptop() {
   }, []);
 
   return (
-    <group ref={meshRef} position={[0, 0, 0]}>
+    <group ref={meshRef} position={[0, 0, 0]} scale={scale}>
       {/* Ici, nous utilisons la scène du modèle GLB */}
       <primitive object={scene} visible={visible} />
     </group>

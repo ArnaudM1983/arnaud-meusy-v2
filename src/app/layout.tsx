@@ -3,6 +3,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import clsx from "clsx";
+import Contact from "@/components/Contact";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -27,6 +28,7 @@ export default function RootLayout({
         {children}
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
         <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
+        <Contact />
         <Footer />
         
       </body>  

@@ -27,14 +27,14 @@ const Projets: FC<ProjetsProps> = ({ slice }) => {
       </Heading>
 
       {/* Grille des projets */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center bg-slate-900">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center ">
         {slice.primary.card.map((item, index) => {
           const projectLink = asLink(item.link); // Convertir le lien Prismic en URL
 
           return (
             <div
               key={index}
-              className="shadow-lg rounded-xl overflow-hidden transition-transform transform hover:scale-105 duration-300 w-full max-w-[400px]"
+              className="bg-slate-900 shadow-lg rounded-xl overflow-hidden transition-transform transform hover:scale-105 duration-300 w-full max-w-[400px]"
             >
               {/* Image du projet */}
               <PrismicNextImage

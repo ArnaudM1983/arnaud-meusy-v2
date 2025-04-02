@@ -16,7 +16,7 @@ const techStack = [
   { name: "TailwindCSS", color: "#38BDF8", icon: <SiTailwindcss /> },
   { name: "WordPress", color: "#F16529", icon: <SiWordpress /> },
   { name: "Prismic", color: "#FFFFFF", icon: <SiPrismic /> },
-  { name: "PHP", color: "#9A7DFF", icon: <SiPhp /> }, 
+  { name: "PHP", color: "#9A7DFF", icon: <SiPhp /> },
   { name: "Figma", color: "#F24E1E", icon: <SiFigma /> },
 ];
 
@@ -61,7 +61,16 @@ const TechList: FC = () => {
           {Array.from({ length: 15 }, (_, i) => (
             <React.Fragment key={i}>
               <span
-                className="tech-item text-7xl font-extrabold uppercase tracking-tighter flex items-center gap-2"
+                className={`tech-item 
+                  text-2xl        
+                  sm:text-5xl    
+                  md:text-6xl    
+                  lg:text-7xl    
+                  xl:text-7xl
+                  font-extrabold 
+                  uppercase 
+                  tracking-tighter 
+                  flex items-center gap-2`}
                 style={{ color: i === 7 ? color : "inherit" }}
               >
                 {icon}

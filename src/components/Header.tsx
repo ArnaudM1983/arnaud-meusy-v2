@@ -51,7 +51,7 @@ const Header: FC = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-300">
+              <a href="#contact" className="hover:text-yellow-300">
                 Contact
               </a>
             </li>
@@ -61,7 +61,7 @@ const Header: FC = () => {
         {/* Icônes réseaux sociaux visibles uniquement sur grand écran */}
         <div className="hidden lg:flex gap-4">
           <a
-            href="https://www.linkedin.com/in/tonprofil"
+            href="https://www.linkedin.com/in/arnaudmeusy"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-300 text-2xl"
@@ -69,7 +69,7 @@ const Header: FC = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com/tonprofil"
+            href="https://github.com/ArnaudM1983"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-300 text-2xl"
